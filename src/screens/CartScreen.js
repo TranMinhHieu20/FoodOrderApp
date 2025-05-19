@@ -2,10 +2,15 @@ import React, { useContext } from 'react'
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import { CartContext } from '../context/CartContext'
 
-const CartScreen = () => {
+const CartScreen = ({ navigation }) => {
   const { cartItems, removeFromCart, clearCart } = useContext(CartContext)
 
   const total = cartItems.reduce((sum, item) => sum + item.price, 0)
+
+  const handleNavigateHome = () => {
+    clearCart()
+    navigation.navigate('Home')
+  }
 
   const renderItem = ({ item }) => (
     <View style={styles.item}>
@@ -25,7 +30,7 @@ const CartScreen = () => {
       <FlatList data={cartItems} keyExtractor={(item) => item.id} renderItem={renderItem} />
       <View style={styles.footer}>
         <Text style={styles.total}>Tổng: {total} đ</Text>
-        <TouchableOpacity style={styles.button} onPress={clearCart}>
+        <TouchableOpacity style={styles.button} onPress={handleNavigateHome}>
           <Text style={styles.buttonText}>Thanh toán (COD)</Text>
         </TouchableOpacity>
       </View>
@@ -36,7 +41,7 @@ const CartScreen = () => {
 export default CartScreen
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16 },
+  container: { flex: 1, padding: 16, marginTop: 50 },
   item: { flexDirection: 'row', marginBottom: 16 },
   image: { width: 80, height: 80, borderRadius: 10 },
   details: { flex: 1, marginLeft: 12 },

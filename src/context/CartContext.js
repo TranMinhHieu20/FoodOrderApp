@@ -13,7 +13,9 @@ export const CartProvider = ({ children }) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id))
   }
 
-  const clearCart = () => setCartItems([])
+  const clearCart = () => {
+    setCartItems([]), alert('Đặt hàng thành công!')
+  }
 
   return (
     <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart }}>{children}</CartContext.Provider>

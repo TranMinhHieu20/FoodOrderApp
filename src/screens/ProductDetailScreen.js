@@ -30,7 +30,8 @@ export default ProductDetailScreen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16
+    padding: 16,
+    marginTop: 50
   },
   image: {
     width: '100%',
