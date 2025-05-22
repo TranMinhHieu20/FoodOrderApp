@@ -7,7 +7,8 @@ const LoginScreen = ({ navigation }) => {
 
   const onLogin = () => {
     // Tạm thời điều hướng sang Home
-    navigation.navigate('Home')
+    // navigation.navigate('Home')
+    navigation.replace('MainTabs')
   }
 
   return (

@@ -9,6 +9,7 @@ import ProductDetailScreen from '../screens/ProductDetailScreen'
 import CartScreen from '../screens/CartScreen'
 import NotificationScreen from '../screens/NotificationScreen'
 import OrderStatusScreen from '../screens/OrderStatusScreen'
+import MainTabs from '../screens/MainTabs'
 
 const Stack = createNativeStackNavigator()
 
@@ -22,6 +23,7 @@ const AppNavigator = () => (
     <Stack.Screen name="Cart" component={CartScreen} />
     <Stack.Screen name="Notification" component={NotificationScreen} />
     <Stack.Screen name="OrderStatus" component={OrderStatusScreen} />
+    <Stack.Screen name="MainTabs" component={MainTabs} />
   </Stack.Navigator>
 )
 

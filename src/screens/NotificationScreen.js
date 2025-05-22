@@ -14,6 +14,6 @@ const NotificationScreen = () => {
 export default NotificationScreen
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 24 },
+  container: { flex: 1, padding: 24, marginTop: 50 },
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 12 }
 })
